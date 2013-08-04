@@ -2,14 +2,20 @@
 // Get the username in the URL
 var user = window.location.search.match(/user=([^&]+)/);
 
+var lastFMAPIKey = "74a96d850875a94cc89e725d7cd0c3d1";
+
 // If an username is present
 if (user && user.length > 1) {
 	user = user[1];
 
 	// Change the title of the document
-	var title = user+"'s albums stack";
-	document.title = title;
-	document.getElementById("title").firstChild.data = title;
+	document.title = user+"'s albums stack";
+	var title = document.getElementById("title");
+	title.firstChild.data = "'s albums stack";
+	var a = document.createElement("a");
+	a.href = ".";
+	a.appendChild(document.createTextNode(user));
+	title.insertBefore(a, title.firstChild);
 
 	// Hide the username form
 	document.getElementById("userform").style.display = "none";
@@ -21,12 +27,12 @@ if (user && user.length > 1) {
 	document.body.appendChild(loading);
 
 	// Load his albums collection (for the last year)
-	loadJSONP("http://ws.audioscrobbler.com/2.0/?method=library.getalbums&api_key=74a96d850875a94cc89e725d7cd0c3d1&user="+
-		user + "&format=json&limit=256&period=12month&callback=retrieveAlbums");
+	loadJSONP("http://ws.audioscrobbler.com/2.0/?method=library.getalbums&api_key="+lastFMAPIKey+
+		"&user="+user+"&format=json&limit=256&period=12month&callback=retrieveAlbums");
 
 	// Load his last listenings
-	loadJSONP("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key=74a96d850875a94cc89e725d7cd0c3d1&user="+
-		user + "&format=json&limit=200&callback=retrieveTracks");
+	loadJSONP("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key="+lastFMAPIKey+
+		"&user="+user+"&format=json&limit=200&callback=retrieveTracks");
 }
 
 // Very small JSONP load function, I'm lazy

@@ -18,6 +18,10 @@ h1 {
 	font-weight: normal;
 }
 
+h1 a {
+	color:#ddd;
+}
+
 #userform {
 	font-size: 1.2em;
 	margin: auto;
