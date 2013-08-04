@@ -2,7 +2,7 @@
 
 Show the last albums of the user, and his top albums.
 
-Demo : http://yellowiscool.github.io/albumscollection/ and http://yellowiscool.github.io/albumscollection/?user=rj
+Demo : http://yellowiscool.github.io/albumscollection/ and http://yellowiscool.github.io/albumscollection/?user=joanofarctan
 
  * Use the Last.FM API
  * Create Spotify links
