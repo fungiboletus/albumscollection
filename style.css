@@ -1,0 +1,91 @@
+html, body {
+	margin:0;
+	padding:0;
+	background: #222;
+}
+
+body {
+	padding-bottom:20px;
+	font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Luxi Sans", sans-serif;
+}	
+
+h1 {
+	margin: 0;
+	padding: 0.5em 1em 0.5em 0.5em;
+	background: black;
+	font-size: 1em;
+	color: #ddd;
+	font-weight: normal;
+}
+
+#userform {
+	font-size: 1.2em;
+	margin: auto;
+	text-align:center;
+	margin-top: 10em;
+}
+
+#userform input {
+	font-size: 1.1em;
+	border: none;
+	box-shadow: 0px 0px 3px #bbb inset;
+	padding: 0.6em 0.8em 0.6em 0.8em;
+}
+
+.loading {
+	color: #aaa;
+	text-align: center;
+	font-size: 0.9em;
+	margin-top: 300px;
+}
+
+.album {
+	text-decoration:none;
+	display:inline-block;
+	width:300px;
+	height:300px;
+	position:relative;
+	max-width:100%;
+	overflow:hidden;
+	margin: 20px 0 0 20px;
+	box-shadow: 0px 0px 10px #111;
+	background:black;
+	color:#333;
+}
+
+.album img {
+	height:100%;
+	width:100%;
+	border:none;
+}
+
+.album h3 {
+	color:white;
+	font-size:1.2em;
+	position:absolute;
+	left:0;
+	bottom:-100px;
+	right:0;
+	padding: 0.3em 0.5em 0.3em 0.5em;
+	margin: 0;
+	background: rgba(0,0,0,0.75);
+	-webkit-transition: bottom 0.333s ease;
+	-moz-transition: bottom 0.333s ease;
+	transition: bottom 0.333s ease;
+}
+
+.album:hover h3 {
+	bottom:0;
+}
+
+@media screen and (max-width: 250px) {
+	.album h3 {
+		font-size:1em;
+	}
+}
+
+@media screen and (max-width: 150px) {
+	.album h3 {
+		font-size:0.8em;
+	}
+}
