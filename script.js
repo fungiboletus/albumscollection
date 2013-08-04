@@ -125,7 +125,7 @@ function load() {
 		artistName = tracks.track[i].artist["#text"];
 	
 		// Some albums don't have a mbid, so use the name as key
-		key = album.mbid != "" ? album.mbid : artistName + " - "+album["#text"];
+		key = artistName + " - "+album["#text"];
 
 		// If it's the first time we see this album
 		if (!albumsPositions.hasOwnProperty(key)) {
@@ -176,7 +176,7 @@ function load() {
 		album = albums.album[i];
 
 		// Some albums don't have a mbid, so use the name as key
-		key = album.mbid != "" ? album.mbid : album.artist.name + " - " + album.name;
+		key = album.artist.name + " - " + album.name;
 
 		// If the album is already displayed, ignore it the second time
 		if (displayedAlbums.hasOwnProperty(key)) {
